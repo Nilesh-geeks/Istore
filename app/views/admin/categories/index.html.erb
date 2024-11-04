@@ -3,14 +3,12 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <% content_for :title, "Categories" %>
-
-  <div class="flex justify-between items-center p-5">
+  <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Categories</h1>
     <%= link_to "New category", new_admin_category_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
- <div class="flex flex-col w-full bg-gray-300">
+  <div class="flex flex-col w-full">
     <div class="overlow-x-auto sm:mx-0.5 lg:mx-0.5">
       <div class="py-2 inline-block min-w-full">
         <div class="overlow-x-auto">
@@ -30,6 +28,9 @@
             <tbody>
               <% @admin_categories.each do |c| %>
                 <tr class="bg-gray-50 border-b">
+                  <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline" style="width:100px;">
+                    <%= c.image.present? ? image_tag(c.image) : image_tag("https://via.placeholder.com/50") %>
+                  </td>
                   <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline">
                     <%= link_to c.name, edit_admin_category_path(c) %>
                   </td>
@@ -37,24 +38,11 @@
                     <%= c.description %>
                   </td>
                 </tr>
-              <% end %>
+              <% end %>   
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
