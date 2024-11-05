@@ -28,6 +28,10 @@
                   <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
                   Price 
                 </th>
+              
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Quantity 
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -44,6 +48,9 @@
                   </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
                       <%= (c.price / 10.0).to_s %>
+                  </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                      <%= c.quantity %>
                   </td>
                 </tr>
               <% end %>   
